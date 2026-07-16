@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Appointment Chatbot - Serve</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1>🏥 City Hospital Chatbot</h1>
+                <p>Book your appointment with just a few clicks</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="chat-wrapper">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message bot-message">
+                        <div class="message-content">
+                            <p>👋 Welcome to City Hospital! I'm here to help you book an appointment. How can I assist you today?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-input-area">
+                    <form id="chatForm" onsubmit="sendMessage(event)">
+                        <div class="input-wrapper">
+                            <input 
+                                type="text" 
+                                id="userInput" 
+                                placeholder="Type your message here..." 
+                                autocomplete="off"
+                                required
+                            >
+                            <button type="submit" class="send-btn">
+                                <span>Send</span>
+                                <span class="send-icon">➤</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h3>Quick Actions</h3>
+                    <button class="quick-btn" onclick="quickAction('book')">📅 Book Appointment</button>
+                    <button class="quick-btn" onclick="quickAction('info')">ℹ️ Hospital Info</button>
+                    <button class="quick-btn" onclick="quickAction('doctors')">👨‍⚕️ Our Doctors</button>
+                    <button class="quick-btn" onclick="quickAction('check')">✓ Check Appointment</button>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Contact Info</h3>
+                    <p>📞 <strong>Phone:</strong> +1-800-HOSPITAL</p>
+                    <p>📧 <strong>Email:</strong> info@cityhospital.com</p>
+                    <p>📍 <strong>Address:</strong> 123 Medical Plaza, Healthcare City</p>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Session Info</h3>
+                    <p id="sessionId">User ID: <span class="highlight">Loading...</span></p>
+                    <button class="btn-secondary" onclick="clearChat()">Clear Chat</button>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
